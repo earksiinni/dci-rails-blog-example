@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  scope module: 'blog' do
+  scope module: 'blog_service' do
     scope module: 'physical' do
-      root 'static_pages#index'
+      root 'blog#index'
+      resource :post, only: [:new, :create]
     end
   end
   
